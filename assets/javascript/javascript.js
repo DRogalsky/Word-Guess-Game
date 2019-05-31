@@ -3,6 +3,8 @@ var possibleWords =['hello']
 let guessed = [];
 let theWord = [];
 let chosenWord;
+let wrong = 0;
+let wins = 0;
 
 function newWord() {
     let selector = Math.floor(Math.random()*possibleWords.length);
@@ -11,6 +13,7 @@ function newWord() {
 
 function cleanUp() {
     chosenWord = newWord();
+    wrong = 0;
     theWord = [];
     guessed = [];
     for (let i = 0; i < chosenWord.length; i++) {
@@ -32,12 +35,18 @@ function letterCheck(letter) {
 document.onkeyup = function(event) {
     let pressed = event.key;
 
-    //TODO: function to check the letter
     if (guessed.includes(pressed)) {
         alert("You've already guessed this!");
     } else {
         guessed.push(pressed);
-        console.log(letterCheck(pressed));
+        let checker = letterCheck(pressed);
+        if (checker === false) {
+            wrong++;
+        }
+        if (theWord.indexOf('_') === -1) {
+            alert('YOU WIN');
+            cleanUp();
+        }
     }
 }
 
