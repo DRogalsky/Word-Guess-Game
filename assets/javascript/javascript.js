@@ -1,19 +1,30 @@
-//TODO: chooes words?
 var possibleWords = ['grip','breathe','blue','tiger','follow','shrill', 'clever', 'structure', 'rainstorm', 'egg', 'sow', 'resolve', 'smite', 'defiant', 'scientific', 'machine', 'play', 'persuade', 'push'];
+let guessed = [];
+let theWord = [];
+let chosenWord;
+
 function newWord() {
     let selector = Math.floor(Math.random()*possibleWords.length);
     return possibleWords[selector];
 }
-console.log(newWord());
+
+function cleanUp() {
+    chosenWord = newWord();
+    theWord = [];
+    guessed = [];
+    for (let i = 0; i < chosenWord.length; i++) {
+        theWord.push('_');
+    }
+}
 
 document.onkeyup = function(event) {
-    let key = event.key;
-    let guessed = [];
+    let pressed = event.key;
+
     //TODO: function to check the letter
-    if (guessed.includes(key)) {
-        // youve guessed this! probbably alert?
+    if (guessed.includes(pressed)) {
+        alert("You've already guessed this!");
     } else {
-        guessed.push(key);
+        guessed.push(pressed);
         //call the function i haven't made yet
     }
 }
