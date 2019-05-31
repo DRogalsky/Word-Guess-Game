@@ -33,6 +33,7 @@ function cleanUp() {
     wrong = 0;
     theWord = [];
     guessed = [];
+    keycodeContainer = [];
     for (let i = 0; i < chosenWord.length; i++) {
         theWord.push('_');
     }
