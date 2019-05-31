@@ -1,0 +1,22 @@
+body{
+    background: black;
+}
+
+.container{
+    margin: 0 auto;
+    width: 20vw;
+}
+
+div {
+    margin: 0 auto;
+    height: 40vh;
+}
+
+h1 {
+    text-align:center;
+    color: white;
+}
+
+p{
+    color: white;
+}
