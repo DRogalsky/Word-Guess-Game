@@ -1,6 +1,7 @@
 var possibleWords = ['grip','breathe','blue','tiger','follow','shrill', 'clever', 'structure', 'rainstorm', 'egg', 'sow', 'resolve', 'smite', 'defiant', 'scientific', 'machine', 'play', 'persuade', 'push'];
 let guessed = [];
 let theWord = [];
+let keycodeContainer = [];
 let chosenWord;
 let wrong = 0;
 let wins = 0;
@@ -36,6 +37,7 @@ function cleanUp() {
         theWord.push('_');
     }
     wordBox.textContent = showTheWord(theWord);
+    guessedLettersBox.textContent = guessed;
 }
 
 function letterCheck(letter) {
@@ -51,29 +53,33 @@ function letterCheck(letter) {
 
 document.onkeyup = function(event) {
     let pressed = event.key;
-
-    if (guessed.includes(pressed)) {
-        alert("You've already guessed this!");
-    } else {
-        guessed.push(pressed);
-        let checker = letterCheck(pressed);
-        if (checker === false) {
-            wrong++;
-        }
-        if (theWord.indexOf('_') === -1) {
-            alert('YOU WIN');
-            wins++;
-            cleanUp();
-        }
-        if (wrong === 9) {
-            alert('YOU LOSE');
-            losses++;
-            cleanUp();
+    let pressedCode = event.keyCode;
+    if (pressedCode > 64 && pressedCode < 91) {
+        if (keycodeContainer.includes(pressedCode)) {
+            alert("You've already guessed this!");
+        } else {
+            guessed.push(pressed);
+            keycodeContainer.push(pressedCode)
+            guessedLettersBox.textContent = guessed;
+            let checker = letterCheck(pressed);
+            wordBox.textContent = showTheWord(theWord);
+            if (checker === false) {
+                wrong++;
+            }
+            if (theWord.indexOf('_') === -1) {
+                alert('YOU WIN');
+                wins++;
+                winsBox.textContent = wins;
+                cleanUp();
+            }
+            if (wrong === 9) {
+                alert('YOU LOSE');
+                losses++;
+                lossesBox.textContent = losses;
+                cleanUp();
+            }
         }
     }
 }
 
 cleanUp();
-//TODO: make letters show up on screen
-//TODO: if word is complete win if hangman complete lose
-//TODO: keep track of chosen letters?
