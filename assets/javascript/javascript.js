@@ -114,6 +114,7 @@ document.onkeyup = function(event) {
                     abominable.style.visibility = 'visible';
                     losses++;
                     lossesBox.textContent = losses;
+                    alert('YOU LOSE');
                 }
 
             }
