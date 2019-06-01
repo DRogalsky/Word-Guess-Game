@@ -9,12 +9,27 @@
 </head>
 <body>
     <h1>WORD GUESS GAME!</h1>
-    <div id='snowman'></div>
+    <div id='snowman'>
+        <img src='assets/images/skifreak.gif' alt="skifreak snowman" id='abominable'>
+        <div id="body">
+            <div id="head">
+                <div id="left" class="eye"></div>
+                <div id="right" class ="eye"></div>
+                <div id="nose"></div>
+                <div id="mouth"></div>
+            </div>
+            <div id="scarf">
+                <img src="assets/images/SeekPng.com_christmas-scarf-png_1585369.png" alt="scarf">
+            </div>
+        </div>
+        <div id='arms'></div>
+    </div>
     <div class='container'>
         <p>Word: <span id="wordBox"></span></p>
         <p>Guessed: <span id="guessedLettersBox"></span></p>
         <p>Wins: <span id="winsBox"></span></p>
         <p>Losses: <span id="lossesBox"></span></p>
+        <button id=restart>Restart!</button>
     </div>
     <script src="assets/javascript/javascript.js"></script>
 </body>

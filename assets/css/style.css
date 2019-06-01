@@ -1,5 +1,5 @@
 body{
-    background: black;
+    background: #3D4849;
 }
 
 .container{
@@ -19,4 +19,108 @@ h1 {
 
 p{
     color: white;
+}
+
+#snowman {
+    min-height: 400px;
+}
+
+#abominable {
+    position: absolute;
+    left: 35%;
+    z-index: 10;
+    visibility: hidden;
+}
+
+.eye {
+    background-color: black;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    z-index: 5;
+    bottom: 0%;
+}
+
+#left {
+    left: 20px;
+    top: 30px;
+    visibility: hidden;
+}
+
+#right {
+    right: 20px;
+    top: 10px;
+    visibility: hidden;
+}
+
+#nose {
+    background-color: orange;
+    border-radius: 50%;
+    position: relative;
+    top: 20px;
+    height: 20px;
+    width: 20px;
+    visibility: hidden;
+}
+
+#mouth {
+    background-color :white;
+    border-top: 5px solid black;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    top: 30px;
+    position: relative;
+    visibility: hidden;
+}
+
+#head {
+    background-color:white;
+    border-radius: 50%;
+    width: 125px;
+    height: 125px;
+    position: relative;
+    left: 0px;
+    bottom: 6em;
+    z-index: 4;
+    visibility: hidden;
+}
+
+#body {
+    background-color:white;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 43%;
+    bottom: 50%;
+    z-index: 4;
+    visibility: hidden;
+}
+
+#scarf{
+    position: relative;
+    bottom: 125px;
+    left : 10px;
+    z-index: 5;
+    visibility: hidden;
+}
+
+#scarf img {
+    height: 150px;
+    width: 150px;
+}
+
+#arms {
+    z-index: 3;
+    border-left: 10px solid brown;
+    border-bottom: 10px solid brown;
+    height: 175px;
+    width: 175px;
+    position: relative;
+    bottom : 20px;
+    right: 10px;
+    transform: rotate(315deg);
+    visibility: hidden;
 }
